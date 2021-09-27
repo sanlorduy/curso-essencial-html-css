@@ -10,7 +10,7 @@
 
     <header>
       <nav>
-        <details open>
+        <details>
           <summary>
             Setup
           </summary>
@@ -38,7 +38,7 @@
             </ol>
           </details>
 
-        <details open>
+        <details>
           <summary>
             Conceptos esenciales del Desarrollo Web
           </summary>
@@ -75,19 +75,25 @@
             </li>
           </ol>
         </details>
+        <script>
+          const $detailsList = document.querySelectorAll('details')
+          $detailsList.forEach(($details) => {
+            $details.querySelector('summary').addEventListener('click', expand)
+          })
+
+          function expand() {
+            $detailsList.forEach(($details) => {
+              $details.removeAttribute('open')
+
+
+            })
+          }
+        </script>
       </nav>
     </header>
-    <script>
-      const $detailsList = document.querySelectorAll('details')
-      $detailsList.forEach(($details) => {
-        $details.querySelector('summary').addEventListener('click', expand)
-      })
-      function expand() {
-        $detailsList.forEach(($details) => {
-          $details.removeAttibute('open')
-        })
-      }
-    </script>
+
+
+
 
     <h1>
       Curso esencial de html y css
